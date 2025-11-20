@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:41:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/20 13:25:17 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/20 18:29:00 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <cstring>
 #include <unistd.h>
+#include <stdio.h>
 
 // void	print_contact(void)
 // {
@@ -35,28 +36,27 @@ int main(void) {
 	std::string input;
 	PhoneBook	list;
 	int			contact_index;
-	int 		count = 1;
+	int 		count = 0;
 	bool		end = false;
 	/*Peut etre déclarer une variable compteur qui permet de savoir ou on en est dans l'ajout de contact*/
 	while (end != true)
 	{
 		std::cout << ">>";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		input = to_uppercase(input);
-		if (!input.compare("ADD"))
-		{
-			list.add_contact(&list, count);
-			// std::cout << "New contact added" << std::endl;
+		if (!input.compare("ADD")) {
 			count++;
-			// continue;
+			std::cout << "//------------ADD-NEW------------//" << std::endl;
+			list.add_contact(&list, &count);
 		}
 		else if (!input.compare("SEARCH")) {
-			list.print_phonebook_list(&list);
-			std::cout << "Contact you need more details on (enter a number): " << std::endl;
+
+			list.print_phonebook_list(&list, count);
+			std::cout << "Contact details (enter a number): ";
 			std::cin >> contact_index;
-			if (contact_index < 0 || contact_index > 8)
+			if (contact_index > 0 && contact_index < 9)
 			{
-				/*afficher le contact en détail*/
+				contact_index -= 1;
 				list.print_contact(&list, contact_index);
 			}
 		}

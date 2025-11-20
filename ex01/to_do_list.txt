@@ -1,0 +1,13 @@
+Chose a corriger :
+
+-L'ajout du nouveau contact lorsqu'il ya deja trop 8 contact se fait dans le mauvais sens
+ + remettre a jour les index. (le nouveau devient 8 et les autres perdent 1 index)
+
+-Afficher un message quand la personne n'ecrit pas un chiffre entre 1 et 8 
+pour les details de contact puis reprendre la boucle.
+
+-Empecher le fait de pouvoir mettre une lettre dans un numero de telephone.
+
+-Empecher de pouvoir mettre un chiffre dans le nom et prénom.
+
+-Probleme d'affichage lorsque qu'on entre le nombre du contact détail.
