@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:41:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/20 18:29:00 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/21 13:26:39 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(void) {
 	int			contact_index;
 	int 		count = 0;
 	bool		end = false;
-	/*Peut etre déclarer une variable compteur qui permet de savoir ou on en est dans l'ajout de contact*/
+
 	while (end != true)
 	{
 		std::cout << ">>";
@@ -46,8 +46,9 @@ int main(void) {
 		input = to_uppercase(input);
 		if (!input.compare("ADD")) {
 			count++;
-			std::cout << "//------------ADD-NEW------------//" << std::endl;
-			list.add_contact(&list, &count);
+			std::cout << "\033[1;4;31m            ADD-NEW            \033[m" << std::endl;
+			if (list.add_contact(&list, &count))
+				continue;
 		}
 		else if (!input.compare("SEARCH")) {
 
@@ -59,6 +60,8 @@ int main(void) {
 				contact_index -= 1;
 				list.print_contact(&list, contact_index);
 			}
+			else
+				std::cout << "This contact doesn't exist";
 		}
 		else if (!input.compare("EXIT")) {
 			std::cout << "End of program" << std::endl;

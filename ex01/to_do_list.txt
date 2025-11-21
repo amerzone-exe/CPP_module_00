@@ -1,13 +1,19 @@
 Chose a corriger :
 
 -L'ajout du nouveau contact lorsqu'il ya deja trop 8 contact se fait dans le mauvais sens
- + remettre a jour les index. (le nouveau devient 8 et les autres perdent 1 index)
+ + remettre a jour les index. (le nouveau devient 8 et les autres perdent 1 index) ✅
+
+-Regler segfault quand on rajoute le 8eme contact.
 
 -Afficher un message quand la personne n'ecrit pas un chiffre entre 1 et 8 
-pour les details de contact puis reprendre la boucle.
+pour les details de contact puis reprendre la boucle. ✅
 
 -Empecher le fait de pouvoir mettre une lettre dans un numero de telephone.
 
 -Empecher de pouvoir mettre un chiffre dans le nom et prénom.
 
--Probleme d'affichage lorsque qu'on entre le nombre du contact détail.
+-Problème d'affichage lorsque qu'on entre le nombre du contact détail.
+
+-Changer méthode add contact, faire directement l'add dans la classe contact, sans pointeur.
+Probablement utiliser les initialisation list.
+Comme par exemple : Contact::Contact(f_name, l_name, n_name, p_nb, ds) : _f_name(f_name), etc..

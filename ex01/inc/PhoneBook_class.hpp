@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 15:32:46 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/20 18:29:09 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/21 11:15:38 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,13 @@ public :
 	PhoneBook(void); /*Peut-etre initialiser les contacts dans le constructeur*/
 	~PhoneBook(void);
 
-	/*-----PROBABLEMENT PUBLIC----------*/
-
-	/*fonction pour print le phone book en entier avec tous les contacts "en const car il ne modifie aucune valeur"*/ 
 	void	print_phonebook_list(PhoneBook *list, int count) const;
-
-	/*fonction pour print un contact du phonebook ligne par ligne "en const car il ne modifie aucune valeur"*/
 	void	print_contact(PhoneBook *list, int index) const;
-
-	/*fonction pour crée le nouveau contact*/
-	void	add_contact(PhoneBook *list, int *count);
-
-	/*fonction pour ajouter un nouveau contact au phone book*/
+	int		add_contact(PhoneBook *list, int *count);
 
 private :
-	/*-----PROBABLEMENT EN PRIVE----------*/
-	Contact create_contact(int count);
-	/*fonction pour décaler tout le tableau de contact en rajoutant +1 a chaque en indice*/
+
+	int		create_contact(Contact *person, int count);
 	void	shift_array(Contact *people, int count);
 
 	std::string _resize_input(std::string input);
