@@ -17,4 +17,4 @@ std::transform :
 Transform applique la fonction donné aux element donné en entré dans une range donné.
 Dans l'exercice on lui passe en argument notre string qu'on a convertit en std::string. On utilise la fonction begin pour renvoyer un itérateur sur le premier caractère de notre string.
 
-EX
+sEX

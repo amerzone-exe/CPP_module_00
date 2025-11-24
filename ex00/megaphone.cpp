@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:36:43 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/21 13:26:20 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/24 14:36:32 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include <cctype>
 #include <cstring>
 
-char	*to_uppercase(char *str) {
-	for (size_t i = 0; i < strlen(str); i++) {
-		str[i] = toupper(static_cast<char>(str[i]));
+std::string	to_uppercase(std::string input) {
+	for (size_t i = 0; i < input.length(); i++) {
+		input[i] = toupper(static_cast<char>(input[i]));
 	}
-	return (str);
+	return (input);
 }
 
 int main(int ac, char **av) {
@@ -27,7 +27,8 @@ int main(int ac, char **av) {
 		return (0);
 	}
 	for (int i = 1; i < ac; i++) {
-		std::cout << to_uppercase(av[i]);
+		std::string input = av[i];
+		std::cout << to_uppercase(input);
 	}
 	std::cout << std::endl;
 	return (0);

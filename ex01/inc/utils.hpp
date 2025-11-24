@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:22:58 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/24 17:48:41 by jpiquet          ###   ########.fr       */
+/*   Created: 2025/11/24 16:25:05 by jpiquet           #+#    #+#             */
+/*   Updated: 2025/11/24 17:48:29 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
-Contact::Contact(void) 
-{
-	this->index = 0;
-	return;
-}
+# include <iostream>
+# include <string>
 
-Contact::~Contact(void) 
-{
-	return;
-}
+std::string to_uppercase(std::string str);
+std::string resize_input(std::string input);
+
+#endif
