@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:41:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:26:32 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/26 16:35:39 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int main(void)
 {
 	std::string input;
 	PhoneBook list;
+
 	int contact_index;
 	int count = -1;
-	int i = 0;
 	bool end = false;
 
 	while (end != true)
@@ -58,7 +58,6 @@ int main(void)
 		}
 		else if (!input.compare("EXIT"))
 			end = true;
-		i++;
 	}
 	return (0);
 }

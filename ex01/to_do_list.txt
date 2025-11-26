@@ -16,3 +16,5 @@ pour les details de contact puis reprendre la boucle. ✅
 
 -Faire en sort de mettre les attributs de contact en private, donc mettre create_contact
 en tant que membre de Contact.
+
+Corriger toute les erreurs de norme : interdit de mettre _ => reservé au variable et fonction private.

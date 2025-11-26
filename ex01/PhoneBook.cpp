@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 17:24:26 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:29:25 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/26 16:31:30 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,44 +63,6 @@ void PhoneBook::create_contact(void)
 		throw(2);
 	this->people[0].set_contact(1, first_name, last_name, nickname, phone_number, dark_secret);
 }
-
-// /*Get the data for a contact and check data, return 1 if there is an error*/
-// void PhoneBook::create_contact(void)
-// {
-// 	int	index;
-// 	std::string first_name, last_name, nickname, phone_number, dark_secret;
-// 	this->people[0].index = 1;
-
-// 	std::cout << "First name : ";
-// 	if (!std::getline(std::cin, this->people[0].first_name))
-// 		throw(1);
-// 	else if (this->people[0].first_name.empty())
-// 		throw(2);
-
-// 	std::cout << "Last name : ";
-// 	if (!std::getline(std::cin, this->people[0].last_name))
-// 		throw(1);
-// 	else if (this->people[0].last_name.empty())
-// 		throw(2);
-
-// 	std::cout << "Nickname : ";
-// 	if (!std::getline(std::cin, this->people[0].nickname))
-// 		throw(1);
-// 	else if (this->people[0].nickname.empty())
-// 		throw(2);
-
-// 	std::cout << "Phone number : ";
-// 	if (!std::getline(std::cin, this->people[0].phone_number))
-// 		throw(1);
-// 	else if (this->people[0].phone_number.empty())
-// 		throw(2);
-
-// 	std::cout << "Darkest secret : ";
-// 	if (!std::getline(std::cin, this->people[0].dark_secret))
-// 		throw(1);
-// 	else if (this->people[0].dark_secret.empty())
-// 		throw(2);
-// }
 
 /*Shift all contact to pass the first contact to the 2nd and delete the last*/
 void PhoneBook::shift_array(int max)

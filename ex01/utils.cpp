@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:26:26 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/24 17:53:53 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/26 16:31:43 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,29 +35,3 @@ std::string resize_input(std::string input)
 	}
 	return (input);
 }
-
-// bool phone_number_is_valid(std::string phone_number)
-// {
-// 	int i = 0;
-
-// 	while (phone_number[i])
-// 	{
-// 		if (!isdigit(phone_number[i]))
-// 			return (false);
-// 		i++;
-// 	}
-// 	return (true);
-// }
-
-// bool name_is_valid(std::string name)
-// {
-// 	int i = 0;
-
-// 	while (name[i])
-// 	{
-// 		if (!isalpha(name[i]))
-// 			return (false);
-// 		i++;
-// 	}
-// 	return (true);
-// }

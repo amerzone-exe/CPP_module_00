@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:22:58 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:23:25 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/26 16:34:49 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,38 +68,3 @@ void	Contact::change_index(int new_index)
 {
 	this->index = new_index;
 }
-// Contact	Contact::create_contact(void)
-// {
-// 	this->index = 1;
-
-// 	std::cout << "First name : ";
-// 	if (!std::getline(std::cin, this->first_name))
-// 		throw(1);
-// 	else if (this->first_name.empty())
-// 		throw(2);
-
-// 	std::cout << "Last name : ";
-// 	if (!std::getline(std::cin, this->last_name))
-// 		throw(1);
-// 	else if (this->last_name.empty())
-// 		throw(2);
-
-// 	std::cout << "Nickname : ";
-// 	if (!std::getline(std::cin, this->nickname))
-// 		throw(1);
-// 	else if (this->nickname.empty())
-// 		throw(2);
-
-// 	std::cout << "Phone number : ";
-// 	if (!std::getline(std::cin, this->phone_number))
-// 		throw(1);
-// 	else if (this->phone_number.empty())
-// 		throw(2);
-
-// 	std::cout << "Darkest secret : ";
-// 	if (!std::getline(std::cin, this->dark_secret))
-// 		throw(1);
-// 	else if (this->dark_secret.empty())
-// 		throw(2);
-// 	return (this->)
-// }
