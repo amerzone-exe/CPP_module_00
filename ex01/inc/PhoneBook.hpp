@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 15:32:46 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/24 18:35:41 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/25 19:20:00 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ public:
 
 private:
 	Contact people[8];
-	void create_contact();
 	void shift_array(int max);
-
-	std::string _resize_input(std::string input);
+	void create_contact();
 };
 
 #endif

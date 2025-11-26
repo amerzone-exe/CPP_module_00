@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:41:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/24 18:36:31 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/26 16:26:32 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,15 @@
 
 int main(void)
 {
-
 	std::string input;
 	PhoneBook list;
 	int contact_index;
 	int count = -1;
-	bool end = false;
 	int i = 0;
+	bool end = false;
 
 	while (end != true)
 	{
-		std::cout << "tour de boucle = " << i << std::endl;
 		std::cout << ">>";
 		if (!std::getline(std::cin, input))
 		{
