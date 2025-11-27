@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 17:52:37 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 19:04:14 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/11/27 15:48:16 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ Account::Account(void)
 
 Account::Account(int initial_deposit) : _amount(initial_deposit)
 {
-	Account::_totalAmount = initial_deposit;
-	/*initialize*/
-	this->_accountIndex = Account::_nbAccounts;
-	Account::_nbAccounts += 1;
+	/*update class data*/
+	this->_totalAmount = initial_deposit;
+	this->_nbAccounts += 1;
+	/*initialize instance*/
+	this->_accountIndex = this->_nbAccounts;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
 	return;
 }
 
@@ -52,14 +55,19 @@ int Account::getNbWithdrawals(void)
 	return Account::_totalNbWithdrawals;
 }
 
+int	Account::checkAmount(void) const
+{
+	return this->_amount;
+}
+
 /*add deposit to actual amount + total amount*/
 void Account::makeDeposit(int deposit)
 {
 	this->_amount += deposit;
 	this->_nbDeposits++;
 
-	Account::_totalAmount += deposit;
-	Account::_totalNbDeposits++;
+	this->_totalAmount += deposit;
+	this->_totalNbDeposits++;
 }
 
 bool Account::makeWithdrawal(int withdrawal)
@@ -69,7 +77,14 @@ bool Account::makeWithdrawal(int withdrawal)
 		std::cout << "withdrawal:refused";
 		return false;
 	}
+	this->_amount -= withdrawal;
+	this->_nbWithdrawals++;
+
+	this->_totalAmount -= withdrawal;
+	this->_totalNbWithdrawals++;
+	return true;
 	/*faire l'inverse pour le dépot*/
+	
 }
 
 void Account::displayAccountsInfos(void)
