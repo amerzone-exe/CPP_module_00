@@ -1,17 +1,15 @@
-NAME = phonebook
+NAME = account
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 INC = inc
 
-OBJDIR = obj/
+SRC =	Account.cpp \
+		tests.cpp
 
-SRC =	main.cpp \
-		Contact.cpp \
-		PhoneBook.cpp \
-		utils.cpp
+OBJDIR = obj/
 
 OBJ := $(addprefix $(OBJDIR), $(SRC:.cpp=.o))
 
