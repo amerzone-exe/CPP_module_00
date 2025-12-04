@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:41:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:35:39 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/04 11:14:06 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <cstdlib>
 
 int main(void)
 {
@@ -40,18 +41,24 @@ int main(void)
 		{
 			count++;
 			std::cout << "\033[1;4;31m            ADD-NEW            \033[m" << std::endl;
-			if (list.add_contact(count))
-				continue;
+			list.addContact(count);
 		}
 		else if (!input.compare("SEARCH"))
 		{
-			list.print_phonebook_list(count);
+			list.printPhonebookList(count);
 			std::cout << "Contact details (enter a number): ";
-			std::cin >> contact_index;
+			if (!std::getline(std::cin, input))
+			{
+				std::cout << "EOF reached" << std::endl;
+				return (1);
+			}
+			if (input.empty())
+				continue;
+			contact_index = atoi(input.c_str());
 			if (contact_index > 0 && contact_index < 9 && contact_index <= count + 1)
 			{
 				contact_index -= 1;
-				list.print_contact(contact_index);
+				list.printContact(contact_index);
 			}
 			else
 				std::cout << "This contact doesn't exist" << std::endl;

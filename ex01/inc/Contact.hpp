@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:16:56 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:29:49 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/04 10:02:55 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,27 @@ class Contact
 {
 
 private:
-	int index;
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string phone_number;
-	std::string dark_secret;
+	int			_index;
+	std::string	_firstName;
+	std::string	_lastName;
+	std::string	_nickName;
+	std::string	_phoneNumber;
+	std::string	_darkestSecret;
 
 public:
 	Contact(void);
 	~Contact(void);
 
-	int			get_index(void) const;
-	std::string	get_first_name(void) const;
-	std::string	get_last_name(void) const;
-	std::string	get_nickname(void) const;
-	std::string	get_phonenumber(void) const;
-	std::string	get_darkest_secret(void) const;
+	int			getIndex(void) const;
+	std::string	getFirstName(void) const;
+	std::string	getLastName(void) const;
+	std::string	getNickname(void) const;
+	std::string	getPhoneNumber(void) const;
+	std::string	getDarkestSecret(void) const;
 
-	void set_contact(int index, std::string f_name, std::string l_name,
+	void setContact(int index, std::string f_name, std::string l_name,
 					 std::string n_name, std::string phone, std::string darkest);
-	void change_index(int new_index);
+	void changeIndex(int new_index);
 };
 
 #endif

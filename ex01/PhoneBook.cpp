@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 17:24:26 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:31:30 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/04 11:09:51 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ PhoneBook::~PhoneBook(void)
 }
 
 /*Get the data for a contact and check data, return 1 if there is an error*/
-void PhoneBook::create_contact(void)
+void PhoneBook::_createContact(void)
 {
 	std::string first_name, last_name, nickname, phone_number, dark_secret;
 
@@ -61,47 +61,50 @@ void PhoneBook::create_contact(void)
 		throw(1);
 	else if (dark_secret.empty())
 		throw(2);
-	this->people[0].set_contact(1, first_name, last_name, nickname, phone_number, dark_secret);
+
+	this->_people[0].setContact(1, first_name, last_name, nickname, phone_number, dark_secret);
 }
 
 /*Shift all contact to pass the first contact to the 2nd and delete the last*/
-void PhoneBook::shift_array(int max)
+void PhoneBook::_shiftArray(int max)
 {
 	for (int i = max; i > 0; i--)
 	{
-		this->people[i] = this->people[i - 1];
-		this->people[i].change_index(i + 1);
+		this->_people[i] = this->_people[i - 1];
+		this->_people[i].changeIndex(i + 1);
 	}
 }
 
 /*Add a new contact to the Phonebook*/
-int PhoneBook::add_contact(int &count)
+void PhoneBook::addContact(int &count)
 {
 
 	if (count > 7)
 		count = 7;
 	if (count > 0)
-		shift_array(count);
+		_shiftArray(count);
 	try
 	{
-		create_contact();
+		_createContact();
 	}
 	catch (int error)
 	{
 		switch (error)
 		{
 		case (1):
+		{
+			std::cout << "EOF reached" << std::endl;
 			break;
+		}
 		case (2):
 			std::cout << "Can't be empty" << std::endl;
 			break;
 		}
 	}
-	return 0;
 }
 
 /*Print the phonebook entierly*/
-void PhoneBook::print_phonebook_list(int count) const
+void PhoneBook::printPhonebookList(int count) const
 {
 	int max;
 
@@ -112,20 +115,20 @@ void PhoneBook::print_phonebook_list(int count) const
 	for (int i = 0; i <= max; i++)
 	{
 		std::cout << "\033[1;4;31m            INDEX            \033[m" << std::endl;
-		std::cout << this->people[i].get_index()
-				  << " | " << resize_input(this->people[i].get_first_name())
-				  << " | " << resize_input(this->people[i].get_last_name())
-				  << " | " << resize_input(this->people[i].get_nickname()) << std::endl;
+		std::cout << this->_people[i].getIndex()
+				  << " | " << resize_input(this->_people[i].getFirstName())
+				  << " | " << resize_input(this->_people[i].getLastName())
+				  << " | " << resize_input(this->_people[i].getNickname()) << std::endl;
 	}
 }
 
 /*Print a selected contact with all of the informations*/
-void PhoneBook::print_contact(int index) const
+void PhoneBook::printContact(int index) const
 {
 	std::cout << "\033[1;4;31m            DETAILS           \033[m" << std::endl;
-	std::cout << "First name : " << this->people[index].get_first_name() << std::endl;
-	std::cout << "Last name : " << this->people[index].get_last_name() << std::endl;
-	std::cout << "Nickname : " << this->people[index].get_nickname() << std::endl;
-	std::cout << "Phone number : " << this->people[index].get_phonenumber() << std::endl;
-	std::cout << "Darkest secret : " << this->people[index].get_darkest_secret() << std::endl;
+	std::cout << "First name : " << this->_people[index].getFirstName() << std::endl;
+	std::cout << "Last name : " << this->_people[index].getLastName() << std::endl;
+	std::cout << "Nickname : " << this->_people[index].getNickname() << std::endl;
+	std::cout << "Phone number : " << this->_people[index].getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret : " << this->_people[index].getDarkestSecret() << std::endl;
 }

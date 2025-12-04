@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:22:58 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:34:49 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/04 09:53:12 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Contact::Contact(void)
 {
-	this->index = 0;
+	this->_index = 0;
 	return;
 }
 
@@ -23,48 +23,48 @@ Contact::~Contact(void)
 	return;
 }
 
-int	Contact::get_index(void) const
+int	Contact::getIndex(void) const
 {
-	return this->index;
+	return this->_index;
 }
 
-std::string	Contact::get_first_name(void) const
+std::string	Contact::getFirstName(void) const
 {
-	return this->first_name;
+	return this->_firstName;
 }
 
-std::string	Contact::get_last_name(void) const
+std::string	Contact::getLastName(void) const
 {
-	return this->last_name;
+	return this->_lastName;
 }
 
-std::string	Contact::get_nickname(void) const
+std::string	Contact::getNickname(void) const
 {
-	return this->nickname;
+	return this->_nickName;
 }
 
-std::string	Contact::get_phonenumber(void) const
+std::string	Contact::getPhoneNumber(void) const
 {
-	return this->phone_number;
+	return this->_phoneNumber;
 }
 
-std::string	Contact::get_darkest_secret(void) const
+std::string	Contact::getDarkestSecret(void) const
 {
-	return this->dark_secret;
+	return this->_darkestSecret;
 }
 
-void	Contact::set_contact(int index, std::string f_name, std::string l_name, 
+void	Contact::setContact(int index, std::string f_name, std::string l_name, 
 	std::string n_name, std::string phone, std::string darkest)
 {
-	this->index = index;
-	this->first_name = f_name;
-	this->last_name = l_name;
-	this->nickname = n_name;
-	this->phone_number = phone;
-	this->dark_secret = darkest;
+	this->_index = index;
+	this->_firstName = f_name;
+	this->_lastName = l_name;
+	this->_nickName = n_name;
+	this->_phoneNumber = phone;
+	this->_darkestSecret = darkest;
 }
 
-void	Contact::change_index(int new_index)
+void	Contact::changeIndex(int new_index)
 {
-	this->index = new_index;
+	this->_index = new_index;
 }

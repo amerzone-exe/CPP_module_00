@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amerzone <amerzone@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 17:52:37 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/28 16:30:29 by amerzone         ###   ########.fr       */
+/*   Updated: 2025/12/04 09:21:23 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,16 @@ int Account::getNbWithdrawals(void)
 	return Account::_totalNbWithdrawals;
 }
 
+/* %Y (year) , %m (month), %d(days), %I (hours), %M (minutes), %S (seconds)*/
 void	Account::_displayTimestamp( void )
 {
 	time_t timestamp;
 	struct tm *timeinfo;
-	char buffer[18];
+	char buffer[19];
 	time(&timestamp);
 	timeinfo = localtime(&timestamp);
-	strftime(buffer, 18, "[%Y%m%d_%I%M%S]", timeinfo);
+	strftime(buffer, 19, "[%Y%m%d_%I%M%S] ", timeinfo);
 	std::cout << buffer;
-	// std::cout << "[" <<  timeinfo->tm_year << "] ";
-	/* %Y (year) , %m (month), %d(days), %I (hours), %M (minutes), %S (seconds)*/
 }
 
 void	Account::displayStatus(void) const
@@ -135,10 +134,6 @@ bool Account::makeWithdrawal(int withdrawal)
 
 void Account::displayAccountsInfos(void)
 {
-	// std::cout << "accounts:" << Account::_nbAccounts << ";"
-	// 		  << "total:" << Account::_totalAmount << ";"
-	// 		  << "deposits:" << Account::_totalNbDeposits << ";"
-	// 		  << "withdrawals:" << Account::_totalNbWithdrawals << std::endl;
 	_displayTimestamp();
 	std::cout << "accounts:" << getNbAccounts() << ";"
 			  << "total:" << getTotalAmount() << ";"

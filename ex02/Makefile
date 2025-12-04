@@ -2,16 +2,17 @@ NAME = account
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
 INC = inc
+
+OBJDIR = obj/
 
 SRC =	Account.cpp \
 		tests.cpp
 
-OBJDIR = obj/
-
 OBJ := $(addprefix $(OBJDIR), $(SRC:.cpp=.o))
+DEPS = $(OBJ:.o=.d)
 
 all : $(NAME)
 
@@ -20,7 +21,7 @@ $(NAME) : $(OBJ)
 
 $(OBJDIR)%.o : %.cpp | $(OBJDIR)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+	$(CC) $(FLAGS) -I $(INC) -o $@ -c $<
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
@@ -32,3 +33,7 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+.PHONY: all clean fclean re
+
+-include $(DEPS)

@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 15:32:46 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:33:00 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/04 10:02:30 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ public:
 	PhoneBook(void);
 	~PhoneBook(void);
 
-	void print_phonebook_list(int count) const;
-	void print_contact(int index) const;
-	int add_contact(int &count);
+	void	printPhonebookList(int count) const;
+	void	printContact(int index) const;
+	void	addContact(int &count);
 
 private:
-	Contact people[8];
-	void shift_array(int max);
-	void create_contact();
+	Contact	_people[8];
+	void	_shiftArray(int max);
+	void	_createContact();
 };
 
 #endif

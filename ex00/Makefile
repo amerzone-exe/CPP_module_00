@@ -2,7 +2,7 @@ NAME = megaphone
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = megaphone.cpp
 
@@ -17,9 +17,11 @@ $(NAME) : $(OBJ)
 	$(CC) $(FLAGS) -o $@ -c $<
 
 clean :
-	rm $(OBJ)
+	rm -f $(OBJ)
 
 fclean : clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re : fclean all
+
+.PHONY: all clean fclean re

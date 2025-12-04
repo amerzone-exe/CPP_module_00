@@ -2,7 +2,7 @@ NAME = phonebook
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+FLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 
 INC = inc
 
@@ -14,6 +14,7 @@ SRC =	main.cpp \
 		utils.cpp
 
 OBJ := $(addprefix $(OBJDIR), $(SRC:.cpp=.o))
+DEPS = $(OBJ:.o=.d)
 
 all : $(NAME)
 
@@ -22,7 +23,7 @@ $(NAME) : $(OBJ)
 
 $(OBJDIR)%.o : %.cpp | $(OBJDIR)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+	$(CC) $(FLAGS) -I $(INC) -o $@ -c $<
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
@@ -34,3 +35,7 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+.PHONY: all clean fclean re
+
+-include $(DEPS)
