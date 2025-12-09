@@ -2,7 +2,7 @@ NAME = phonebook
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
+FLAGS = -Wall -Wextra -Werror -MMD -MP
 
 INC = inc
 

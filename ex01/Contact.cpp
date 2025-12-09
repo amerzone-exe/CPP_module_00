@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:22:58 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/04 09:53:12 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/05 16:23:48 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 Contact::Contact(void)
 {
 	this->_index = 0;
-	return;
 }
 
 Contact::~Contact(void) 
 {
-	return;
 }
 
 int	Contact::getIndex(void) const

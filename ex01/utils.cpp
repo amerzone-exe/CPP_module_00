@@ -6,17 +6,21 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:26:26 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/11/26 16:31:43 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/09 10:33:31 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
+#include <cctype>
 
-std::string to_uppercase(std::string str)
-{
-	for (size_t i = 0; i < str.length(); i++)
-		str[i] = toupper(static_cast<char>(str[i]));
-	return (str);
+/*Convert every lowercase character to uppercase of a string passed as parameter
+using toupper function*/
+std::string	toUppercase(std::string input) {
+	for (size_t i = 0; i < input.length(); i++) 
+	{
+		input[i] = static_cast<char>(std::toupper(input[i]));
+	}
+	return (input);
 }
 
 /*Resize the input to make it 10 size long

@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:41:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/04 11:14:06 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/09 10:27:17 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 #include <iostream>
 #include <string>
-#include <cstring>
 #include <cstdlib>
 
 int main(void)
@@ -36,7 +35,7 @@ int main(void)
 			std::cout << "EOF reached" << std::endl;
 			return (1);
 		}
-		input = to_uppercase(input);
+		input = toUppercase(input);
 		if (!input.compare("ADD"))
 		{
 			count++;

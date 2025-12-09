@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:16:56 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/04 10:02:55 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/09 10:24:36 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define CONTACT_HPP
 
 #include <string>
-#include <iostream>
 
 class Contact
 {
