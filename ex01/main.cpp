@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:41:04 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/09 10:27:17 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/11 15:18:58 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,16 @@ int main(void)
 		if (!input.compare("ADD"))
 		{
 			count++;
-			std::cout << "\033[1;4;31m            ADD-NEW            \033[m" << std::endl;
+			std::cout << "\033[1;4;31m                  ADD-NEW                  \033[m" << std::endl;
 			list.addContact(count);
 		}
 		else if (!input.compare("SEARCH"))
 		{
+			if (count == -1)
+			{
+				std::cout << "No contact is register yet !" << std::endl;
+				continue;
+			}
 			list.printPhonebookList(count);
 			std::cout << "Contact details (enter a number): ";
 			if (!std::getline(std::cin, input))
@@ -53,14 +58,14 @@ int main(void)
 			}
 			if (input.empty())
 				continue;
-			contact_index = atoi(input.c_str());
+			contact_index = std::atoi(input.c_str());
 			if (contact_index > 0 && contact_index < 9 && contact_index <= count + 1)
 			{
 				contact_index -= 1;
 				list.printContact(contact_index);
 			}
 			else
-				std::cout << "This contact doesn't exist" << std::endl;
+				std::cout << "This contact doesn't exist !" << std::endl;
 		}
 		else if (!input.compare("EXIT"))
 			end = true;

@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 17:52:37 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/04 09:21:23 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/10 10:53:01 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,25 @@ Account::Account(void)
 	return;
 }
 
+/*Constructor that make an initial deposit in order to create an account
+and add this initial deposit to the total amount*/
 Account::Account(int initial_deposit) : _amount(initial_deposit)
 {
 	_displayTimestamp();
-	/*initialize instance*/
+
 	this->_accountIndex = Account::_nbAccounts;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 
-	/* display instance data*/
 	std::cout << "index:" << this->_accountIndex
 	<< ";amount:" << this->_amount << ";created" << std::endl;
 
-	/*update class data*/
 	Account::_totalAmount += initial_deposit;
 	Account::_nbAccounts++;
 	return;
 }
 
+/*Destructor that display a message for closing account*/
 Account::~Account(void)
 {
 	_displayTimestamp();
@@ -45,6 +46,7 @@ Account::~Account(void)
 	return ;
 }
 
+/*Get private informations*/
 int Account::getNbAccounts(void)
 {
 	return Account::_nbAccounts;
@@ -64,7 +66,7 @@ int Account::getNbWithdrawals(void)
 {
 	return Account::_totalNbWithdrawals;
 }
-
+ 
 /* %Y (year) , %m (month), %d(days), %I (hours), %M (minutes), %S (seconds)*/
 void	Account::_displayTimestamp( void )
 {
@@ -77,21 +79,23 @@ void	Account::_displayTimestamp( void )
 	std::cout << buffer;
 }
 
+/*Display informations about an account*/
 void	Account::displayStatus(void) const
 {
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex
 	<< ";amount:" << this->_amount
-	<< ";deposit:" << this->_nbDeposits
+	<< ";deposits:" << this->_nbDeposits
 	<< ";withdrawals:" << this->_nbWithdrawals << std::endl;
 }
 
+/*Return the amount of money that is available on an account*/
 int	Account::checkAmount(void) const
 {
 	return this->_amount;
 }
 
-/*add deposit to actual amount + total amount*/
+/*Add deposit to actual amount and to total amount*/
 void Account::makeDeposit(int deposit)
 {
 	_displayTimestamp();
@@ -106,9 +110,11 @@ void Account::makeDeposit(int deposit)
 
 	std::cout << ";deposit:" << deposit
 	<< ";amount:" << this->_amount 
-	<< ";nb_deposits" << this->_nbDeposits << std::endl;
+	<< ";nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
+/*Make a withdrawal on an account, verify if it'spossible and display either a refusal message
+or the state of the account after the withdrawal*/
 bool Account::makeWithdrawal(int withdrawal)
 {
 	_displayTimestamp();
@@ -132,6 +138,7 @@ bool Account::makeWithdrawal(int withdrawal)
 	return true;	
 }
 
+/*Display gobal infomation about all the accounts*/
 void Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
@@ -141,8 +148,7 @@ void Account::displayAccountsInfos(void)
 			  << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
-/*INTIALISATION*/
-
+/*Initialization for static variables*/
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;

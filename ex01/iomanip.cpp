@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   iomanip.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 16:25:05 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/11 14:15:58 by jpiquet          ###   ########.fr       */
+/*   Created: 2025/12/11 11:41:44 by jpiquet           #+#    #+#             */
+/*   Updated: 2025/12/11 11:53:37 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#include <iomanip>
+#include <iostream>
 
-# include <string>
-# include <iomanip>
-# include <iostream>
-
-std::string toUppercase(std::string str);
-std::string print_input(std::string input);
-
-#endif
+int main()
+{
+	std::cout << std::setfill(' ') << std::setw(10) << 1 << "|";
+	std::cout << std::setfill(' ') << std::setw(10) << "salut" << "|";
+	std::cout << std::setfill(' ') << std::setw(10) << "cava" << "|";
+	std::cout << std::setfill(' ') << std::setw(10) << "textoiuiosdfiusdf" << "|";
+	return 0;
+}

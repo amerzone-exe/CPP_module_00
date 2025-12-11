@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 17:24:26 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/04 11:09:51 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/11 15:18:25 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,23 +112,29 @@ void PhoneBook::printPhonebookList(int count) const
 		max = 7;
 	else
 		max = count;
+	std::cout << "\033[1;4;31m                   INDEX                   \033[m" << std::endl;
 	for (int i = 0; i <= max; i++)
 	{
-		std::cout << "\033[1;4;31m            INDEX            \033[m" << std::endl;
-		std::cout << this->_people[i].getIndex()
-				  << " | " << resize_input(this->_people[i].getFirstName())
-				  << " | " << resize_input(this->_people[i].getLastName())
-				  << " | " << resize_input(this->_people[i].getNickname()) << std::endl;
+		std::cout << std::setfill(' ') << std::setw(10) << this->_people[i].getIndex()  << "|";
+
+		print_input(this->_people[i].getFirstName());
+		std::cout << "|";
+
+		print_input(this->_people[i].getLastName());
+		std::cout << "|";
+
+		print_input(this->_people[i].getNickname());
+		std::cout << std::endl;
 	}
 }
 
 /*Print a selected contact with all of the informations*/
 void PhoneBook::printContact(int index) const
 {
-	std::cout << "\033[1;4;31m            DETAILS           \033[m" << std::endl;
-	std::cout << "First name : " << this->_people[index].getFirstName() << std::endl;
-	std::cout << "Last name : " << this->_people[index].getLastName() << std::endl;
-	std::cout << "Nickname : " << this->_people[index].getNickname() << std::endl;
-	std::cout << "Phone number : " << this->_people[index].getPhoneNumber() << std::endl;
+	std::cout << "\033[1;4;31m                  DETAILS                  \033[m" << std::endl;
+	std::cout << "First name     : " << this->_people[index].getFirstName() << std::endl;
+	std::cout << "Last name      : " << this->_people[index].getLastName() << std::endl;
+	std::cout << "Nickname       : " << this->_people[index].getNickname() << std::endl;
+	std::cout << "Phone number   : " << this->_people[index].getPhoneNumber() << std::endl;
 	std::cout << "Darkest secret : " << this->_people[index].getDarkestSecret() << std::endl;
 }
