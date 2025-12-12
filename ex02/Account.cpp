@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 17:52:37 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/10 10:53:01 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/12 10:05:49 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ int Account::getNbWithdrawals(void)
 	return Account::_totalNbWithdrawals;
 }
  
-/* %Y (year) , %m (month), %d(days), %I (hours), %M (minutes), %S (seconds)*/
+/* Get the time and put it in the same format as the original log 
+%Y (year) , %m (month), %d(days), %I (hours), %M (minutes), %S (seconds)*/
 void	Account::_displayTimestamp( void )
 {
 	time_t timestamp;

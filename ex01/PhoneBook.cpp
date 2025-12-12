@@ -6,7 +6,7 @@
 /*   By: jpiquet <jpiquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 17:24:26 by jpiquet           #+#    #+#             */
-/*   Updated: 2025/12/11 15:18:25 by jpiquet          ###   ########.fr       */
+/*   Updated: 2025/12/12 09:51:43 by jpiquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void PhoneBook::addContact(int &count)
 	}
 }
 
-/*Print the phonebook entierly*/
+/*Print the phonebook*/
 void PhoneBook::printPhonebookList(int count) const
 {
 	int max;
