@@ -2,7 +2,7 @@ NAME = account
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -MMD
+FLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
 INC = inc
 
